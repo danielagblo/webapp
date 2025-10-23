@@ -1,4 +1,10 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
 .text-color{
     color:#BFBFBF;
 }
@@ -8,4 +14,209 @@
 }
 .btn{
   background-color: #74FFA7;
+}
+
+/* Responsive styles for larger screens */
+@media (min-width: 768px) {
+  /* Tablet and larger */
+  .responsive-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .form-section {
+    max-width: 400px;
+  }
+
+  .sidebar-section {
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Desktop */
+  .responsive-container {
+    padding: 0 2rem;
+  }
+
+  .form-section {
+    max-width: 450px;
+  }
+
+  .sidebar-section {
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 1280px) {
+  /* Large desktop */
+  .responsive-container {
+    padding: 0 4rem;
+  }
+
+  .form-section {
+    max-width: 500px;
+  }
+
+  .sidebar-section {
+    max-width: 700px;
+  }
+}
+
+/* Animated gradient border */
+@keyframes gradientBorder {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.gradient-border {
+  position: relative;
+  background: linear-gradient(45deg, #74FFA7, #374957, #74FFA7, #FF6B6B);
+  background-size: 400% 400%;
+  animation: gradientBorder 5s ease infinite;
+  border-radius: 2rem;
+  padding: 2px;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: white;
+  border-radius: inherit;
+  z-index: 1;
+}
+
+.gradient-border > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Circular progress buttons */
+.progress-button {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: conic-gradient(#374957 0% 50%, #ffffff 50% 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #374957;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.progress-button:hover {
+  transform: scale(1.05);
+}
+
+.progress-button::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  background: white;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.progress-button > * {
+  position: relative;
+  z-index: 2;
+}
+
+.progress-percentage {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.progress-label {
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+/* Individual progress variations */
+.progress-50::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  background: conic-gradient(#374957 0% 50%, #ffffff 50% 100%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.progress-40::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  background: conic-gradient(#374957 0% 40%, #ffffff 40% 100%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.progress-30::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  background: conic-gradient(#374957 0% 30%, #ffffff 30% 100%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.progress-78::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  background: conic-gradient(#374957 0% 78%, #ffffff 78% 100%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.progress-90::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  background: conic-gradient(#374957 0% 90%, #ffffff 90% 100%);
+  border-radius: 50%;
+  z-index: 1;
 }
