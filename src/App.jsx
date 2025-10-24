@@ -8,6 +8,8 @@ import ReferalCode from './Pages/ReferalCode'
 import OPTLogin from './Pages/OPTLogin'
 import ResetMessage from './Pages/ResetMessage'
 import HomePage from './Pages/HomePage'
+import Filter from './Pages/FilterPage'
+
 
 export default function App() {
   const router =  createBrowserRouter(createRoutesFromElements(
@@ -21,6 +23,7 @@ export default function App() {
           <Route path='/resetmessage' element={<ResetMessage/>} />
         {/* the actual route for the home page  */}
         <Route path='/homepage' element={<HomePage/>} />
+        <Route path='/info' element={<Filter/>} />
          </Route>
   ))
   return (

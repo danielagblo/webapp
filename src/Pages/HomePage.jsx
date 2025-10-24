@@ -14,6 +14,9 @@ import { GoSearch } from "react-icons/go";
 import { SlArrowRight } from "react-icons/sl";
 import { FaLocationDot } from "react-icons/fa6";
 import apartment from "../assets/apartment.png"
+
+
+
 const Product = [
   {
     image: mobilephone,
@@ -56,7 +59,6 @@ const Product = [
   },
 
 ]
-
 const CardsInfor = [
   {
     image: apartment,
@@ -89,8 +91,9 @@ const CardsInfor = [
 
 export default function HomePage() {
   return (
-    <div>
-      <div className='flex justify-center items-center h-screen mt-20 lg:mt-40'>
+    <div className='my-16 md:my-32 lg:my-64'>
+      {/* Search bar */}
+      <div className='flex justify-center items-center h-screen mt-10 md:mt-20 lg:mt-40 '>
         <div className="flex  justify-center items-center flex-col gap-y-2">
           <h1 className='text-4xl md:text-5xl lg:text-6xl text-center '>Oysloe</h1>
           <div className='  gradient-border w-[394px] max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl h-12 md:h-14 lg:h-16 mt-2 rounded-4xl' tabIndex='0'>
@@ -100,13 +103,13 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className='grid grid-cols-5 gap-8 mt-3.5'>
+          <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 lg:gap-8 mt-3.5'>
             {
               Product.map((item) => {
                 return (
-                  <div key={item.title} className=' bg-[#F9F9F9] w-[200px] h-[203px] flex flex-col items-center justify-center gap-y-2 rounded-lg shadow-md border-gray-700 hover:border-blue-900 transition-all duration-300 ease-in-out cursor-pointer'>
-                    <img src={item.image} alt="" className='w-full h-[14vh] object-contain aspect-square' />
-                    <p>{item.title}</p>
+                  <div key={item.title} className=' bg-[#F9F9F9] w-full max-w-[244px] h-auto min-h-[203px] flex flex-col items-center justify-center gap-y-2 rounded-lg shadow-md border-gray-700 hover:border-blue-900 transition-all duration-300 ease-in-out cursor-pointer'>
+                    <img src={item.image} alt="" className='w-full h-32 md:h-36 lg:h-40 object-contain aspect-square' />
+                    <p className='text-center'>{item.title}</p>
                   </div>
                 )
               })
@@ -174,12 +177,12 @@ export default function HomePage() {
           {/*  */}
         </div>
       </div>
-
+      {/* Search bar */}
       {/* cards  section  */}
-      <div className='bg-gray-200/30 w-full h-full mt-[180px] px-24 '>
+      <div className='bg-gray-200/30 w-full h-full mt-20 md:mt-32 lg:mt-40 xl:mt-[180px] px-4 md:px-8 lg:px-16 xl:px-[156px] '>
         {/* Electronics card section */}
-        <div>
-          <div className='flex justify-between items-center px-5 py-6 ' >
+        <div className=''>
+          <div className='flex justify-between items-center  mt-[59px] ' >
             <div className="flex flex-row gap-6 items-center">
               <h1 className='text-3xl'>Electronics</h1>
               <button className='bg-[#ffffff] w-[203px] h-[66px] text-2xl rounded-3xl cursor-pointer'>
@@ -195,28 +198,28 @@ export default function HomePage() {
               </button>
             </div>
           </div>
-          <div className='grid grid-cols-5 gap-6 mt-9'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-[13px] mt-[25px] md:gap-[13px]'>
             {CardsInfor.map((datas, index) => {
               return (
-                <div key={index} className=' bg-[#F9F9F9] w-56 h-[203px] flex flex-col   cursor-pointer'>
-                  <img src={datas.image} alt="" className='w-[200px] h-[243px] object-contain aspect-square' />
-                  <div className='flex flex-row gap-2 '>
-                    <FaLocationDot className='text-[#374957BA] ' />
-                    <p className='text-[#374957BA] text-sm'>{datas.location}</p>
+                <div key={index} className=' bg-[#F9F9F9] w-full max-w-56 h-auto min-h-[203px] flex flex-col cursor-pointer p-2'>
+                  <img src={datas.image} alt="" className='w-full h-32 md:h-36 lg:h-40 object-contain aspect-square' />
+                  <div className='flex flex-row gap-2 mt-2'>
+                    <FaLocationDot className='text-[#374957BA] flex-shrink-0' />
+                    <p className='text-[#374957BA] text-sm truncate'>{datas.location}</p>
                   </div>
-                  <p>{datas.title}</p>
-                  <p>₵{datas.price}</p>
+                  <p className='text-sm font-medium mt-1'>{datas.title}</p>
+                  <p className='text-sm font-bold mt-1'>₵{datas.price}</p>
                 </div>
               )
             })}
           </div>
         </div>
         {/*Electronics card section   */}
-        {/* Vehicel setion */}
-        <div className='mt-16'>
-          <div className='flex justify-between items-center px-5 py-6 ' >
+        {/* Vehicle section */}
+        <div className=''>
+          <div className='flex justify-between items-center   mt-[68px] ' >
             <div className="flex flex-row gap-6 items-center">
-              <h1 className='text-3xl'>Vehicles</h1>
+              <h1 className='text-3xl'>Vehicle</h1>
               <button className='bg-[#ffffff] w-[203px] h-[66px] text-2xl rounded-3xl cursor-pointer'>
                 Show all
               </button>
@@ -225,31 +228,31 @@ export default function HomePage() {
               <button className='bg-gray-200 w-[66px] h-[66px] rounded-full flex justify-center items-center'>
                 <SlArrowLeft className='w-6 h-6  ' />
               </button>
-              <button className='bg-[#ffffff] w-[60px] h-[60px] rounded-full flex justify-center items-center'>
+              <button className='bg-[#ffffff] w-[66px] h-[66px] rounded-full flex justify-center items-center'>
                 <SlArrowRight className='w-6 h-6  ' />
               </button>
             </div>
           </div>
-          <div className='grid grid-cols-5 gap-3 mt-9'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-[13px] mt-[25px] md:gap-[13px]'>
             {CardsInfor.map((datas, index) => {
               return (
-                <div key={index} className=' bg-[#F9F9F9] w-56 h-[203px] flex flex-col    cursor-pointer'>
-                  <img src={datas.image} alt="" className='w-[200px] h-[243px] object-contain aspect-square' />
-                  <div className='flex flex-row gap-2 '>
-                    <FaLocationDot className='text-[#374957BA] w-4 h-4' />
-                    <p className='text-[#374957BA] text-sm'>{datas.location}</p>
+                <div key={index} className=' bg-[#F9F9F9] w-full max-w-56 h-auto min-h-[203px] flex flex-col cursor-pointer p-2'>
+                  <img src={datas.image} alt="" className='w-full h-32 md:h-36 lg:h-40 object-contain aspect-square' />
+                  <div className='flex flex-row gap-2 mt-2'>
+                    <FaLocationDot className='text-[#374957BA] flex-shrink-0' />
+                    <p className='text-[#374957BA] text-sm truncate'>{datas.location}</p>
                   </div>
-                  <p>{datas.title}</p>
-                  <p>₵{datas.price}</p>
+                  <p className='text-sm font-medium mt-1'>{datas.title}</p>
+                  <p className='text-sm font-bold mt-1'>₵{datas.price}</p>
                 </div>
               )
             })}
           </div>
         </div>
         {/* Vehical  card section */}
-        {/* fruniture  section */}
-        <div className='mt-16'>
-          <div className='flex justify-between items-center px-5 py-6 ' >
+        {/* Furniture section */}
+        <div className=''>
+          <div className='flex justify-between items-center  mt-[59px] ' >
             <div className="flex flex-row gap-6 items-center">
               <h1 className='text-3xl'>Furniture</h1>
               <button className='bg-[#ffffff] w-[203px] h-[66px] text-2xl rounded-3xl cursor-pointer'>
@@ -265,17 +268,17 @@ export default function HomePage() {
               </button>
             </div>
           </div>
-          <div className='grid grid-cols-5 gap-3 mt-9'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-[13px] mt-[25px] md:gap-[13px]'>
             {CardsInfor.map((datas, index) => {
               return (
-                <div key={index} className=' bg-[#F9F9F9] w-56 h-[203px] flex flex-col   cursor-pointer'>
-                  <img src={datas.image} alt="" className='w-[200px] h-[243px] object-contain aspect-square' />
-                   <div className='flex flex-row gap-2 '>
-                    <FaLocationDot className='text-[#374957BA] ' />
-                    <p className='text-[#374957BA] text-sm'>{datas.location}</p>
+                <div key={index} className=' bg-[#F9F9F9] w-full max-w-56 h-auto min-h-[203px] flex flex-col cursor-pointer p-2'>
+                  <img src={datas.image} alt="" className='w-full h-32 md:h-36 lg:h-40 object-contain aspect-square' />
+                  <div className='flex flex-row gap-2 mt-2'>
+                    <FaLocationDot className='text-[#374957BA] flex-shrink-0' />
+                    <p className='text-[#374957BA] text-sm truncate'>{datas.location}</p>
                   </div>
-                  <p>{datas.title}</p>
-                  <p>₵{datas.price}</p>
+                  <p className='text-sm font-medium mt-1'>{datas.title}</p>
+                  <p className='text-sm font-bold mt-1'>₵{datas.price}</p>
                 </div>
               )
             })}
@@ -283,8 +286,8 @@ export default function HomePage() {
         </div>
         {/* fruniture  card  section */}
         {/* Sport card section */}
-        <div className='mt-16'>
-          <div className='flex justify-between items-center px-5 py-6 ' >
+        <div className=''>
+          <div className='flex justify-between items-center  mt-[59px] ' >
             <div className="flex flex-row gap-6 items-center">
               <h1 className='text-3xl'>Sporting</h1>
               <button className='bg-[#ffffff] w-[203px] h-[66px] text-2xl rounded-3xl cursor-pointer'>
@@ -300,26 +303,26 @@ export default function HomePage() {
               </button>
             </div>
           </div>
-          <div className='grid grid-cols-5 gap-3 mt-9'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-[13px] mt-[25px] md:gap-[13px]'>
             {CardsInfor.map((datas, index) => {
               return (
-                <div key={index} className=' bg-[#F9F9F9] w-56 h-[203px] flex flex-col    cursor-pointer'>
-                  <img src={datas.image} alt="" className='w-[200px] h-[243px] object-contain aspect-square' />
-                   <div className='flex flex-row gap-2 '>
-                    <FaLocationDot className='text-[#374957BA] ' />
-                    <p className='text-[#374957BA] text-sm'>{datas.location}</p>
+                <div key={index} className=' bg-[#F9F9F9] w-full max-w-56 h-auto min-h-[203px] flex flex-col cursor-pointer p-2'>
+                  <img src={datas.image} alt="" className='w-full h-32 md:h-36 lg:h-40 object-contain aspect-square' />
+                  <div className='flex flex-row gap-2 mt-2'>
+                    <FaLocationDot className='text-[#374957BA] flex-shrink-0' />
+                    <p className='text-[#374957BA] text-sm truncate'>{datas.location}</p>
                   </div>
-                  <p>{datas.title}</p>
-                  <p>₵{datas.price}</p>
+                  <p className='text-sm font-medium mt-1'>{datas.title}</p>
+                  <p className='text-sm font-bold mt-1'>₵{datas.price}</p>
                 </div>
               )
             })}
           </div>
         </div>
-         {/* Sport card section */}
-         {/* fashion card section */}
-        <div className='mt-16'>
-          <div className='flex justify-between items-center px-5 py-6 ' >
+        {/* Sport card section */}
+        {/* Fashion card section */}
+        <div className=''>
+          <div className='flex justify-between items-center  mt-[59px] ' >
             <div className="flex flex-row gap-6 items-center">
               <h1 className='text-3xl'>Fashion</h1>
               <button className='bg-[#ffffff] w-[203px] h-[66px] text-2xl rounded-3xl cursor-pointer'>
@@ -335,23 +338,23 @@ export default function HomePage() {
               </button>
             </div>
           </div>
-          <div className='grid grid-cols-5 gap-x-6 mt-9'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-[13px] mt-[25px] md:gap-[13px]'>
             {CardsInfor.map((datas, index) => {
               return (
-                <div key={index} className=' bg-[#F9F9F9] w-56 h-[203px] flex flex-col   cursor-pointer'>
-                  <img src={datas.image} alt="" className='w-[200px] h-[243px] object-contain aspect-square' />
-                   <div className='flex flex-row gap-2 '>
-                    <FaLocationDot className='text-[#374957BA] ' />
-                    <p className='text-[#374957BA] text-sm'>{datas.location}</p>
+                <div key={index} className=' bg-[#F9F9F9] w-full max-w-56 h-auto min-h-[203px] flex flex-col cursor-pointer p-2'>
+                  <img src={datas.image} alt="" className='w-full h-32 md:h-36 lg:h-40 object-contain aspect-square' />
+                  <div className='flex flex-row gap-2 mt-2'>
+                    <FaLocationDot className='text-[#374957BA] flex-shrink-0' />
+                    <p className='text-[#374957BA] text-sm truncate'>{datas.location}</p>
                   </div>
-                  <p>{datas.title}</p>
-                  <p>₵{datas.price}</p>
+                  <p className='text-sm font-medium mt-1'>{datas.title}</p>
+                  <p className='text-sm font-bold mt-1'>₵{datas.price}</p>
                 </div>
               )
             })}
           </div>
         </div>
-         {/* fashion card section */}
+        {/* fashion card section */}
       </div>
       {/* cards  section  */}
     </div>
